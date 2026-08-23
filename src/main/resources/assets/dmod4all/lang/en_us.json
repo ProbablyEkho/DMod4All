@@ -1,0 +1,13 @@
+{
+  "itemGroup.dmod4all": "Example Mod Tab",
+  "block.dmod4all.example_block": "Example Block",
+  "item.dmod4all.example_item": "Example Item",
+
+  "dmod4all.configuration.title": "DMod4All Configs",
+  "dmod4all.configuration.section.dmod4all.common.toml": "DMod4All Configs",
+  "dmod4all.configuration.section.dmod4all.common.toml.title": "DMod4All Configs",
+  "dmod4all.configuration.items": "Item List",
+  "dmod4all.configuration.logDirtBlock": "Log Dirt Block",
+  "dmod4all.configuration.magicNumberIntroduction": "Magic Number Text",
+  "dmod4all.configuration.magicNumber": "Magic Number"
+}
