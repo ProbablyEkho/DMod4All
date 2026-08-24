@@ -1,7 +1,7 @@
 {
-  "itemGroup.dmod4all": "Example Mod Tab",
-  "block.dmod4all.example_block": "Example Block",
-  "item.dmod4all.example_item": "Example Item",
+  "block.dmod4all.rose": "Rose",
+  "block.dmod4all.buttercup": "Buttercup",
+  "block.dmod4all.bluebell": "Bluebell",
 
   "dmod4all.configuration.title": "DMod4All Configs",
   "dmod4all.configuration.section.dmod4all.common.toml": "DMod4All Configs",
