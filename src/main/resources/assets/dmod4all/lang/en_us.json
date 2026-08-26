@@ -2,12 +2,9 @@
   "block.dmod4all.rose": "Rose",
   "block.dmod4all.buttercup": "Buttercup",
   "block.dmod4all.bluebell": "Bluebell",
+  "block.dmod4all.face": "Face",
 
-  "dmod4all.configuration.title": "DMod4All Configs",
-  "dmod4all.configuration.section.dmod4all.common.toml": "DMod4All Configs",
-  "dmod4all.configuration.section.dmod4all.common.toml.title": "DMod4All Configs",
-  "dmod4all.configuration.items": "Item List",
-  "dmod4all.configuration.logDirtBlock": "Log Dirt Block",
-  "dmod4all.configuration.magicNumberIntroduction": "Magic Number Text",
-  "dmod4all.configuration.magicNumber": "Magic Number"
+  "block.dmod4all.face.talk": "<Face> Bro what am I doing here???",
+
+  "subtitles.block.face.talk": "Face talks"
 }

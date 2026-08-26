@@ -2,6 +2,7 @@ package dev.dmod4all;
 
 import dev.dmod4all.block.BlockRegistry;
 import dev.dmod4all.item.ItemRegistry;
+import dev.dmod4all.sound.SoundRegistry;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
@@ -11,8 +12,6 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -25,7 +24,7 @@ public class DMod4All {
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public DMod4All(IEventBus modEventBus, ModContainer modContainer) {
+    public DMod4All(IEventBus modEventBus) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -36,6 +35,7 @@ public class DMod4All {
 
         BlockRegistry.register(modEventBus);
         ItemRegistry.register(modEventBus);
+        SoundRegistry.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -50,6 +50,7 @@ public class DMod4All {
             event.accept(BlockRegistry.ROSE);
             event.accept(BlockRegistry.BUTTERCUP);
             event.accept(BlockRegistry.BLUEBELL);
+            event.accept(BlockRegistry.FACE);
         }
     }
 
