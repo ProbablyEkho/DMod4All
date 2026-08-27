@@ -15,14 +15,6 @@
       "model": "dmod4all:block/face",
       "y": 270
     },
-    "facing=up,talk=false": {
-      "model": "dmod4all:block/face",
-      "x": 270
-    },
-    "facing=down,talk=false": {
-      "model": "dmod4all:block/face",
-      "x": 90
-    },
     "facing=north,talk=true": {
       "model": "dmod4all:block/face_talk"
     },
@@ -37,14 +29,6 @@
     "facing=west,talk=true": {
       "model": "dmod4all:block/face_talk",
       "y": 270
-    },
-    "facing=up,talk=true": {
-      "model": "dmod4all:block/face_talk",
-      "x": 270
-    },
-    "facing=down,talk=true": {
-      "model": "dmod4all:block/face_talk",
-      "x": 90
     }
   }
 }

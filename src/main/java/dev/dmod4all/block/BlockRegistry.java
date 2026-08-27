@@ -27,8 +27,8 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> ROSE = registerBlock("rose", () -> new StackableFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> BUTTERCUP = registerBlock("buttercup", () -> new StackableFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> BLUEBELL = registerBlock("bluebell", () -> new StackableFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
-
     public static final DeferredBlock<Block> FACE = registerBlock("face", () -> new FaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(3).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK).lightLevel(state -> 15)));
+    public static final DeferredBlock<Block> BASKET = registerBlock("basket", () -> new BasketBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(1.5F).sound(SoundType.WOOD)));
 
     public static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ItemRegistry.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

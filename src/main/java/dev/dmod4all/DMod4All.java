@@ -1,6 +1,7 @@
 package dev.dmod4all;
 
 import dev.dmod4all.block.BlockRegistry;
+import dev.dmod4all.block.entity.BlockEntityRegistry;
 import dev.dmod4all.item.ItemRegistry;
 import dev.dmod4all.sound.SoundRegistry;
 import net.minecraft.world.level.block.Blocks;
@@ -38,6 +39,7 @@ public class DMod4All {
         BlockRegistry.register(modEventBus);
         ItemRegistry.register(modEventBus);
         SoundRegistry.register(modEventBus);
+        BlockEntityRegistry.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -62,6 +64,7 @@ public class DMod4All {
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(BlockRegistry.FACE);
+            event.accept(BlockRegistry.BASKET);
         }
     }
 

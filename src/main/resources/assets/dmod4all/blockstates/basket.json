@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "enabled=true": {
+      "model": "dmod4all:block/basket"
+    },
+    "enabled=false": {
+      "model": "dmod4all:block/basket_closed"
+    }
+  }
+}

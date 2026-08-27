@@ -1,6 +1,6 @@
 {
   "block.face_talk": {
-    "subtitle": "subtitles.block.face.talk",
+    "subtitle": "subtitles.dmod4all.block.face.talk",
     "sounds": [
       "dmod4all:block/face_talk"
     ]

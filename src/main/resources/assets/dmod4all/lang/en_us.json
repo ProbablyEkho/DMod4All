@@ -3,8 +3,11 @@
   "block.dmod4all.buttercup": "Buttercup",
   "block.dmod4all.bluebell": "Bluebell",
   "block.dmod4all.face": "Face",
+  "block.dmod4all.basket": "Basket",
 
   "block.dmod4all.face.talk": "<Face> Bro what am I doing here???",
 
-  "subtitles.block.face.talk": "Face talks"
+  "container.dmod4all.basket": "Basket",
+
+  "subtitles.dmod4all.block.face.talk": "Face talks"
 }
