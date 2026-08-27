@@ -3,7 +3,9 @@ package dev.dmod4all;
 import dev.dmod4all.block.BlockRegistry;
 import dev.dmod4all.item.ItemRegistry;
 import dev.dmod4all.sound.SoundRegistry;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.player.BonemealEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
@@ -44,12 +46,21 @@ public class DMod4All {
     private void commonSetup(FMLCommonSetupEvent event) {
     }
 
+    @SubscribeEvent
+    public void noTallGrass(BonemealEvent event) {
+        if(event.getState().is(Blocks.SHORT_GRASS)) {
+            event.setCanceled(true);
+        }
+    }
+
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(BlockRegistry.ROSE);
             event.accept(BlockRegistry.BUTTERCUP);
             event.accept(BlockRegistry.BLUEBELL);
+        }
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(BlockRegistry.FACE);
         }
     }
