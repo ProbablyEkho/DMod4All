@@ -13,6 +13,9 @@
     "requireAnnotations": true
   },
   "client": [
+    "GuiGraphicsMixin",
+    "ItemEntityRendererMixin",
+    "ItemFrameRendererMixin",
     "ScreenMixin"
   ]
 }
