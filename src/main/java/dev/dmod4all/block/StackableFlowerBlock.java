@@ -10,10 +10,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.block.BushBlock;
-import net.minecraft.world.level.block.FarmBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -62,18 +59,21 @@ public class StackableFlowerBlock extends BushBlock implements BonemealableBlock
     }
 
     protected void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
-        if (serverLevel.isAreaLoaded(blockPos, 1)) {
-            if (serverLevel.getRawBrightness(blockPos, 0) >= 9) {
-                if (blockState.getValue(AMOUNT) < MAX_FLOWERS) {
-                    float f = getGrowthSpeed(blockState, serverLevel, blockPos);
-                    if (CommonHooks.canCropGrow(serverLevel, blockPos, blockState, randomSource.nextInt((int)(25.0F / f) + 1) == 0)) {
-                        serverLevel.setBlock(blockPos, blockState.setValue(AMOUNT, blockState.getValue(AMOUNT) + 1), 2);
-                        CommonHooks.fireCropGrowPost(serverLevel, blockPos, blockState);
+        if(serverLevel.getBlockState(blockPos.below()).is(Blocks.FARMLAND)) {
+            if (serverLevel.isAreaLoaded(blockPos, 1)) {
+                if (serverLevel.getRawBrightness(blockPos, 0) >= 9) {
+                    if (blockState.getValue(AMOUNT) < MAX_FLOWERS) {
+                        float f = getGrowthSpeed(blockState, serverLevel, blockPos);
+                        if (CommonHooks.canCropGrow(serverLevel, blockPos, blockState, randomSource.nextInt((int)(25.0F / f) + 1) == 0)) {
+                            serverLevel.setBlock(blockPos, blockState.setValue(AMOUNT, blockState.getValue(AMOUNT) + 1), 2);
+                            CommonHooks.fireCropGrowPost(serverLevel, blockPos, blockState);
+                        }
                     }
                 }
-            }
 
+            }
         }
+
     }
 
     protected static float getGrowthSpeed(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {

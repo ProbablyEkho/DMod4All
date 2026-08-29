@@ -1,7 +1,20 @@
 {
   "values": [
-    "dmod4all:rose",
-    "dmod4all:buttercup",
-    "dmod4all:bluebell"
+    "dmod4all:red_flower",
+	"dmod4all:orange_flower",
+    "dmod4all:yellow_flower",
+    "dmod4all:lime_flower",
+    "dmod4all:green_flower",
+    "dmod4all:mint_flower",
+    "dmod4all:aqua_flower",
+    "dmod4all:blue_flower",
+    "dmod4all:indigo_flower",
+    "dmod4all:violet_flower",
+    "dmod4all:purple_flower",
+    "dmod4all:magenta_flower",
+    "dmod4all:pink_flower",
+    "dmod4all:white_flower",
+    "dmod4all:gray_flower",
+    "dmod4all:black_flower"
   ]
 }

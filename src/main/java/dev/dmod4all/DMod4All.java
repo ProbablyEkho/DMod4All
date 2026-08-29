@@ -58,9 +58,22 @@ public class DMod4All {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(BlockRegistry.ROSE);
-            event.accept(BlockRegistry.BUTTERCUP);
-            event.accept(BlockRegistry.BLUEBELL);
+            event.accept(BlockRegistry.RED_FLOWER);
+            event.accept(BlockRegistry.ORANGE_FLOWER);
+            event.accept(BlockRegistry.YELLOW_FLOWER);
+            event.accept(BlockRegistry.LIME_FLOWER);
+            event.accept(BlockRegistry.GREEN_FLOWER);
+            event.accept(BlockRegistry.MINT_FLOWER);
+            event.accept(BlockRegistry.AQUA_FLOWER);
+            event.accept(BlockRegistry.BLUE_FLOWER);
+            event.accept(BlockRegistry.INDIGO_FLOWER);
+            event.accept(BlockRegistry.VIOLET_FLOWER);
+            event.accept(BlockRegistry.PURPLE_FLOWER);
+            event.accept(BlockRegistry.MAGENTA_FLOWER);
+            event.accept(BlockRegistry.PINK_FLOWER);
+            event.accept(BlockRegistry.WHITE_FLOWER);
+            event.accept(BlockRegistry.GRAY_FLOWER);
+            event.accept(BlockRegistry.BLACK_FLOWER);
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(BlockRegistry.FACE);

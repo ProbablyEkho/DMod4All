@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "flower_amount=1": {
+      "model": "dmod4all:block/blue_flower_1"
+    },
+    "flower_amount=2": {
+      "model": "dmod4all:block/blue_flower_2"
+    },
+    "flower_amount=3": {
+      "model": "dmod4all:block/blue_flower_3"
+    },
+    "flower_amount=4": {
+      "model": "dmod4all:block/blue_flower_4"
+    }
+  }
+}

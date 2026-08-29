@@ -1,0 +1,7 @@
+{
+  "render_type": "cutout_mipped",
+  "parent": "dmod4all:block/cross_2",
+  "textures": {
+    "cross": "dmod4all:block/white_flower"
+  }
+}
