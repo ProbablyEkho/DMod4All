@@ -6,10 +6,13 @@ import net.minecraft.network.chat.Component;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.RenderTooltipEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
@@ -17,15 +20,15 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
 @EventBusSubscriber(modid = DMod4All.MODID, value = Dist.CLIENT)
 public class DMod4AllClient {
-    public DMod4AllClient(IEventBus modEventBus) {
+    public DMod4AllClient(IEventBus modEventBus, ModContainer modContainer) {
         KeybindRegistry.register(modEventBus);
         RenameManager.load();
+        modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
-
     @SubscribeEvent
     static void onItemTooltip(ItemTooltipEvent event) {
+        if(Config.VANILLA_TOOLTIPS.get()) return;
         String name = RenameManager.getName(event.getItemStack());
-
         if (name != null) {
             event.getToolTip().clear();
             event.getToolTip().add(Component.literal(name));
@@ -33,6 +36,7 @@ public class DMod4AllClient {
     }
     @SubscribeEvent
     static void onTooltipRender(RenderTooltipEvent.Pre event) {
+        if(Config.VANILLA_TOOLTIPS.get()) return;
         if (RenameManager.getName(event.getItemStack()) == null) {
             event.setCanceled(true);
         }
