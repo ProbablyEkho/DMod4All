@@ -1,5 +1,6 @@
 package dev.dmod4all;
 
+import dev.dmod4all.client.FlowerMixingManager;
 import dev.dmod4all.client.KeybindRegistry;
 import dev.dmod4all.client.RenameManager;
 import net.minecraft.network.chat.Component;
@@ -23,6 +24,7 @@ public class DMod4AllClient {
     public DMod4AllClient(IEventBus modEventBus, ModContainer modContainer) {
         KeybindRegistry.register(modEventBus);
         RenameManager.load();
+        FlowerMixingManager.load();
         modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
     @SubscribeEvent

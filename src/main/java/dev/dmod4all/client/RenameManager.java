@@ -27,8 +27,7 @@ public class RenameManager {
             for(Map.Entry<String, JsonElement> entry : json.entrySet()) {
                 JsonElement value = entry.getValue();
 
-                if(value.isJsonPrimitive()
-                        && value.getAsJsonPrimitive().isString()) {
+                if(value.isJsonPrimitive() && value.getAsJsonPrimitive().isString()) {
                     RENAMES.put(entry.getKey(), value.getAsString());
                 }
             }
@@ -52,8 +51,7 @@ public class RenameManager {
         if(itemStack.isEmpty()) {
             return null;
         }
-        ResourceLocation item = BuiltInRegistries.ITEM.getKey(itemStack.getItem());
-        return RENAMES.get(item.toString());
+        return RENAMES.get(BuiltInRegistries.ITEM.getKey(itemStack.getItem()).toString());
     }
     private static void save() {
         try {

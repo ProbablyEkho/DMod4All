@@ -1,6 +1,7 @@
 package dev.dmod4all.block;
 
 import com.mojang.serialization.MapCodec;
+import dev.dmod4all.client.FlowerMixingManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -55,18 +56,19 @@ public class StackableFlowerBlock extends BushBlock implements BonemealableBlock
     }
 
     protected boolean isRandomlyTicking(BlockState blockState){
-        return blockState.getValue(AMOUNT) < MAX_FLOWERS;
+        return true;
     }
 
     protected void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
-        if(serverLevel.getBlockState(blockPos.below()).is(Blocks.FARMLAND)) {
-            if (serverLevel.isAreaLoaded(blockPos, 1)) {
-                if (serverLevel.getRawBrightness(blockPos, 0) >= 9) {
-                    if (blockState.getValue(AMOUNT) < MAX_FLOWERS) {
-                        float f = getGrowthSpeed(blockState, serverLevel, blockPos);
-                        if (CommonHooks.canCropGrow(serverLevel, blockPos, blockState, randomSource.nextInt((int)(25.0F / f) + 1) == 0)) {
-                            serverLevel.setBlock(blockPos, blockState.setValue(AMOUNT, blockState.getValue(AMOUNT) + 1), 2);
-                            CommonHooks.fireCropGrowPost(serverLevel, blockPos, blockState);
+        if(blockState.getValue(AMOUNT) < MAX_FLOWERS) {
+            if(serverLevel.isAreaLoaded(blockPos, 1)) {
+                if(serverLevel.getRawBrightness(blockPos, 0) >= 9) {
+                    if(!mixing(serverLevel, blockPos, blockState, randomSource)) {
+                        if(serverLevel.getBlockState(blockPos.below()).is(Blocks.FARMLAND)) {
+                            if(CommonHooks.canCropGrow(serverLevel, blockPos, blockState, randomSource.nextInt((int)(25.0F / getGrowthSpeed(blockState, serverLevel, blockPos)) + 1) == 0)) {
+                                serverLevel.setBlock(blockPos, blockState.setValue(AMOUNT, blockState.getValue(AMOUNT) + 1), 2);
+                                CommonHooks.fireCropGrowPost(serverLevel, blockPos, blockState);
+                            }
                         }
                     }
                 }
@@ -74,6 +76,25 @@ public class StackableFlowerBlock extends BushBlock implements BonemealableBlock
             }
         }
 
+    }
+
+    protected boolean mixing(ServerLevel serverLevel, BlockPos firstFlowerPos, BlockState firstFlowerState, RandomSource randomSource) {
+        for (Direction direction : Direction.Plane.HORIZONTAL) {
+            BlockPos mixedFlowerPos = firstFlowerPos.relative(direction);
+            BlockPos secondFlowerPos = mixedFlowerPos.relative(direction);
+            if(serverLevel.isEmptyBlock(mixedFlowerPos) && serverLevel.getBlockState(mixedFlowerPos.below()).is(Blocks.FARMLAND)) {
+                BlockState secondFlowerState = serverLevel.getBlockState(secondFlowerPos);
+                Block mixedFlower = FlowerMixingManager.getFlower(firstFlowerState.getBlock(), secondFlowerState.getBlock());
+                if(mixedFlower == null) continue;
+                if(CommonHooks.canCropGrow(serverLevel, mixedFlowerPos, firstFlowerState, randomSource.nextInt((int)(25.0F / getGrowthSpeed(firstFlowerState, serverLevel, firstFlowerPos)) + 1) == 0)) {
+                    BlockState mixedFlowerState = mixedFlower.defaultBlockState().setValue(AMOUNT, MIN_FLOWERS);
+                    serverLevel.setBlock(mixedFlowerPos, mixedFlowerState, 2);
+                    CommonHooks.fireCropGrowPost(serverLevel, mixedFlowerPos, mixedFlowerState);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     protected static float getGrowthSpeed(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos) {
