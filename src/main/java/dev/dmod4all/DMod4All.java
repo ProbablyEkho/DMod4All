@@ -76,7 +76,9 @@ public class DMod4All {
             event.accept(BlockRegistry.BLACK_FLOWER);
         }
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            event.accept(BlockRegistry.FACE);
+            event.accept(BlockRegistry.REVENITE_FACE);
+            event.accept(BlockRegistry.SANGUINITE_FACE);
+            event.accept(BlockRegistry.TIM);
             event.accept(BlockRegistry.BASKET);
         }
     }

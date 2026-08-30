@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "dmod4all:block/sanguinite_face",
+    "side": "dmod4all:block/sanguinite_face_side",
+    "top": "dmod4all:block/sanguinite_face_side"
+  }
+}

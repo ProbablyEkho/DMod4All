@@ -41,7 +41,9 @@ public class BlockRegistry {
     public static final DeferredBlock<Block> GRAY_FLOWER = registerBlock("gray_flower", () -> new StackableFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final DeferredBlock<Block> BLACK_FLOWER = registerBlock("black_flower", () -> new StackableFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 
-    public static final DeferredBlock<Block> FACE = registerBlock("face", () -> new FaceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(3).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK).lightLevel(state -> 15)));
+    public static final DeferredBlock<Block> REVENITE_FACE = registerBlock("revenite_face", () -> new FaceBlock("block.dmod4all.face.revenite_talk", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(50.0F, 1200.0F).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK).lightLevel(state -> 15)));
+    public static final DeferredBlock<Block> SANGUINITE_FACE = registerBlock("sanguinite_face", () -> new FaceBlock("block.dmod4all.face.sanguinite_talk", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(50.0F, 1200.0F).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK).lightLevel(state -> 15)));
+    public static final DeferredBlock<Block> TIM = registerBlock("tim", () -> new FaceBlock("block.dmod4all.face.tim_talk", BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(50.0F, 1200.0F).sound(SoundType.METAL).pushReaction(PushReaction.BLOCK).lightLevel(state -> 15)));
     public static final DeferredBlock<Block> BASKET = registerBlock("basket", () -> new BasketBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(1.5F).sound(SoundType.WOOD)));
 
     public static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {

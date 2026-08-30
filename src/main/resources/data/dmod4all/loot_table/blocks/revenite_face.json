@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dmod4all:face"
+          "name": "dmod4all:revenite_face"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "dmod4all:blocks/face"
+  "random_sequence": "dmod4all:blocks/revenite_face"
 }

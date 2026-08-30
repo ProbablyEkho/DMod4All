@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "dmod4all:block/face",
-    "side": "dmod4all:block/face_side",
-    "top": "dmod4all:block/face_side"
-  }
-}

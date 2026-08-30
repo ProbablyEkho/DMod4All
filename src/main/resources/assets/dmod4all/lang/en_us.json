@@ -16,10 +16,14 @@
   "block.dmod4all.gray_flower": "Gray Flower",
   "block.dmod4all.black_flower": "Black Flower",
 
-  "block.dmod4all.face": "Face",
+  "block.dmod4all.revenite_face": "Revenite Face",
+  "block.dmod4all.sanguinite_face": "Sanguinite Face",
+  "block.dmod4all.tim": "Tim",
   "block.dmod4all.basket": "Basket",
 
-  "block.dmod4all.face.talk": "<Face> Bro what am I doing here???",
+  "block.dmod4all.face.revenite_talk": "<Face> I have no idea why I am here.968 Although I don't really mind it to be honest?_ as the world I originate from is too far gone to save I fear.. Actually2163843maybe you should find it and beat3000 it up into unrecognizable mush. That would be innovative probably.",
+  "block.dmod4all.face.sanguinite_talk": "<Face> WHAT IS68192163843THIS &e0 PLACE????_ IT'S TOO SCARY210242!!!!!! GET ME 2420OUT OF HERE!!4 NOW!!!!!!!!!!!!256512102420484096819216one IT'S EVEN WORSE???? SOMEHOW???????? I KEEP HEARING A CUCKOO CLOCK EVERY MORNING012481MAKE IT STOPP!!!!.",
+  "block.dmod4all.face.tim_talk": "<Tim> Hello, my name is Tim, and I would like to announce that I am rather neutral about DB4ALL, the contributors-driven modpack based off DB3K. Thanks for listening to my announcement!",
 
   "container.dmod4all.basket": "Basket",
   "container.dmod4all.rename": "What will the name be?",
