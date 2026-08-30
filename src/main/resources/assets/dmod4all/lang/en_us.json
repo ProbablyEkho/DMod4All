@@ -22,6 +22,9 @@
   "block.dmod4all.face.talk": "<Face> Bro what am I doing here???",
 
   "container.dmod4all.basket": "Basket",
+  "container.dmod4all.rename": "What will the name be?",
+
+  "key.dmod4all.rename": "Rename",
 
   "subtitles.dmod4all.block.face.talk": "Face talks"
 }
