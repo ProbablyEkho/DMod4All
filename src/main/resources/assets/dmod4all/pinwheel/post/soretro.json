@@ -1,0 +1,9 @@
+{
+  "stages": [
+    {
+      "type": "veil:blit",
+      "shader": "dmod4all:soretro",
+      "in": "minecraft:main"
+    }
+  ]
+}
