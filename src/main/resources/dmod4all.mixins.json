@@ -3,6 +3,8 @@
   "package": "dev.dmod4all.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "EntityMixin",
+    "PrimedTntMixin",
     "SlimeMixin",
     "ZetaPistonStructureResolverMixin"
   ],
