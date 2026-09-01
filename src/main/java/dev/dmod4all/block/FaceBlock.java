@@ -73,6 +73,6 @@ public class FaceBlock extends Block {
 
     protected void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
         serverLevel.removeBlock(blockPos, false);
-        serverLevel.explode(null, null, new SimpleExplosionDamageCalculator(false, true, Optional.of(5F), BuiltInRegistries.BLOCK.getTag(BlockTags.BLOCKS_WIND_CHARGE_EXPLOSIONS).map(Function.identity())), blockPos.getX(), blockPos.getY(), blockPos.getZ(), 5F, false, Level.ExplosionInteraction.BLOCK);
+        serverLevel.explode(null, null, new SimpleExplosionDamageCalculator(false, false, Optional.of(5F), BuiltInRegistries.BLOCK.getTag(BlockTags.BLOCKS_WIND_CHARGE_EXPLOSIONS).map(Function.identity())), blockPos.getX(), blockPos.getY(), blockPos.getZ(), 5F, false, Level.ExplosionInteraction.BLOCK);
     }
 }
