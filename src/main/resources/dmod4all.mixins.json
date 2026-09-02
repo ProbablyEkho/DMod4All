@@ -19,6 +19,7 @@
     "GuiGraphicsMixin",
     "ItemEntityRendererMixin",
     "ItemFrameRendererMixin",
+    "LivingEntityRendererMixin",
     "ScreenMixin"
   ]
 }
