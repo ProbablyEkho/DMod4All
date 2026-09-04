@@ -20,7 +20,6 @@
   "client": [
     "GuiGraphicsMixin",
     "ItemEntityRendererMixin",
-    "ItemFrameRendererMixin",
     "LivingEntityRendererMixin",
     "ScreenMixin"
   ]
