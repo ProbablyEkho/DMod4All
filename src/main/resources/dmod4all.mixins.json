@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BasePressurePlateBlockMixin",
+    "CaveSoundManagerMixin",
     "EntityMixin",
     "FallingBlockEntityMixin",
     "FenceBlockMixin",
@@ -23,6 +24,7 @@
     "GuiGraphicsMixin",
     "ItemEntityRendererMixin",
     "LivingEntityRendererMixin",
-    "ScreenMixin"
+    "ScreenMixin",
+    "SimpleSoundInstanceMixin"
   ]
 }
