@@ -5,6 +5,7 @@
   "mixins": [
     "BasePressurePlateBlockMixin",
     "EntityMixin",
+    "FallingBlockEntityMixin",
     "FenceBlockMixin",
     "PrimedTntMixin",
     "SlimeMixin",
